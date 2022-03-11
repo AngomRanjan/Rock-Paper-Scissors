@@ -2,7 +2,7 @@ function playRound(playerSelection, computerSelection) {
     // your code here!
     if (playerSelection==computerSelection)
     {
-        return 'It is a draw!';
+        return 'It is a draw! '+ playerSelection.toUpperCase()+ ' equals ' + computerSelection.toUpperCase();
     }
     else if (playerSelection==='rock' && computerSelection==='scissors' || playerSelection==='paper' && computerSelection==='rock' || playerSelection==='scissor' && computerSelection==='paper')
     {
@@ -35,7 +35,6 @@ function game()
         playerSelection=prompt('Round-'+counter+' Enter your Choice :',playerSelection);
         console.log(playRound(playerSelection.toLowerCase(),computerSelection.toLowerCase()));
     }
-    console.log(win+' -- '+lost);
     if(win>lost) return 'Final Result : Congratulation! You Won.';
     else if(win<lost) return 'Final Result : Sorry! You Lost.';
     else return 'Final Result : It is a Draw!';
