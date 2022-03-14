@@ -1,25 +1,19 @@
 function playRound(playerSelection, computerSelection) {
     // your code here!
-    if (playerSelection==computerSelection)
-    {
-        msg1=msg1+'Round-'+gRound+' : It is a draw! '+ playerSelection.toUpperCase()+ ' equals ' + computerSelection.toUpperCase()+'\n';
-        return 'Round-'+gRound+' : It is a draw! '+ playerSelection.toUpperCase()+ ' equals ' + computerSelection.toUpperCase();
+    if (playerSelection===computerSelection)
+    { 
+        return 'It is a draw! '+ playerSelection.toUpperCase()+ ' equals ' + computerSelection.toUpperCase();
     }
     else if (playerSelection==='rock' && computerSelection==='scissors' || playerSelection==='paper' && computerSelection==='rock' || playerSelection==='scissor' && computerSelection==='paper')
-    {
-        win++;
-        msg1=msg1+'Round-'+gRound+' : You Won! ' + playerSelection.toUpperCase()+ ' beats ' + computerSelection.toUpperCase()+'\n';
-        return 'Round-'+gRound+' : You Won! ' + playerSelection.toUpperCase()+ ' beats ' + computerSelection.toUpperCase();
+    {win++;
+        return 'You Won! ' + playerSelection.toUpperCase()+ ' beats ' + computerSelection.toUpperCase();
     }
     else if (playerSelection==='rock' || playerSelection==='paper' || playerSelection==='scissors')
-    {
-        lost++;
-        msg1=msg1+'Round-'+gRound+' : You Lost! '+ playerSelection.toUpperCase()+ ' beaten by ' + computerSelection.toUpperCase()+'\n';
-        return 'Round-'+gRound+' : You Lost! '+ playerSelection.toUpperCase()+ ' beaten by ' + computerSelection.toUpperCase();
+    {lost++
+        return 'You Lost! '+ playerSelection.toUpperCase()+ ' beaten by ' + computerSelection.toUpperCase();
     }
     else {
-        msg1=msg1+'Round-'+gRound+' : Invalid input!\n'; 
-        return 'Round-'+gRound+' : Invalid input!';        
+        return 'Invalid input!';        
     }
   }
   function computerPlay()
@@ -31,22 +25,21 @@ function playRound(playerSelection, computerSelection) {
     else if(x===2) {return 'paper';}
     else {return 'scissors';}
 }
-function game()
+function game(playerSelection='rock')
 {
-    for (let counter=1;counter<=5;counter++)
+    for (let counter=1;counter<=1;counter++)
     {   let computerSelection = computerPlay();
         gRound=counter;
-        playerSelection=prompt(msg1+'\n'+'Round-'+counter+' Enter your Choice :',playerSelection);
-        console.log(playRound(playerSelection.toLowerCase(),computerSelection.toLowerCase()));
+        console.log('round ' +gRound+" - "+playRound(playerSelection.toLowerCase(),computerSelection.toLowerCase()));
     }
     if(win>lost) msg2=msg2+'Final Result : Congratulation! You Won.';
     else if(win<lost) msg2=msg2+'Final Result : Sorry! You Lost.';
     else return msg2=msg2+'Final Result : It is a Draw!';
-    return msg2
+    return msg2;
 }
-  let playerSelection = "rock";
+//   let playerSelection = "rock";
   let win=lost=gRound=0;
   let msg1=msg2='';
-  console.log(game());
-  alert(msg1+'\n'+msg2);
+  let p=console.log(game());
+//   alert(msg1+'\n'+msg2);
   
