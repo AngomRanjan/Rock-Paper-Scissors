@@ -27,6 +27,7 @@ function playRound(playerSelection, computerSelection) {
 }
 function game(playerSelection='rock')
 {
+    
     for (let counter=1;counter<=1;counter++)
     {   let computerSelection = computerPlay();
         gRound=counter;
@@ -40,6 +41,9 @@ function game(playerSelection='rock')
 //   let playerSelection = "rock";
   let win=lost=gRound=0;
   let msg1=msg2='';
-  let p=console.log(game());
+  console.log(game());
+//   document.getElementById("resultText").textContent = p;
+//   p=document.getElementById("uScore").textContent
+ 
 //   alert(msg1+'\n'+msg2);
   

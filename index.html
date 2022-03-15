@@ -4,7 +4,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <script src="rps.js" defer></script>
-      <!-- <link rel="stylesheet" href="style.css"> -->
+      <link rel="stylesheet" href="style.css">
       <title>Rock Paper Scissor</title>
   </head>
   <body>
@@ -13,25 +13,21 @@
       <h2 class="titleAdd">The First to score 5, Wins!</h2>
     </header>
       <main>
-        </div>
+      <section>
         <div class = "scoreBoard">
-          <h1>SCORE-BOARD</h1>
-          <div id="userScore"><h3>YOU</h3><h4>0</h4></div>
+          <h2 id = "scoreTitle">SCORE-BOARD</h2>
+          <div id="userScore"><h3>YOU</h3><h4 id="uScore">0</h4></div>
           <div id="computerScore"><h3>COMPUTER</h3><h4>0</h4></div>
-          <p id="Result Text">here goes result details</p>
-        </div>        
-        <div class="usrWeapons">
+          <h3 id="resultText">here goes result details</3>
+        </div>
+      </section>
+        <div class="container" id="usrWeapons">
           <h2>Select your weapon</h2>
-          <!--
-          <button id="Rock" accesskey="R" onclick="alert('You clicked the button.')" width="150px" height="150px">ROCK</button>
-          <button id="paper" accesskey="P" width="150px" height="150px">PAPER</button>
-          <button id="scissors" accesskey="S" width="150px" height="150px">SCISSORS</button>
-          -->
           <figure id="Rock"><img src="images/rock.jpg" alt="ROCK" width="100px" height="100px"><figcaption>ROCK</figcaption></figure>
           <figure id="Paper"><img id="Paper" src="images/paper.jpg" alt="PAPER" width="100px" height="100px"><figcaption>PAPER</figcaption></figure>
           <figure id="Scissor"><img id="Scissor" src="images/scissors.jpg" alt="SCISSORS" width="100px" height="100px"><figcaption>SCISSORS</figcaption></figure>
         </div>
-        <div class="comWeapons">
+        <div class="container"id="comWeapons">
           <h2>Computer weapon</h2>          
           <figure id="comRock"><img src="images/rock.jpg" alt="ROCK" width="100px" height="100px"><figcaption>ROCK</figcaption></figure>
           <figure id="comPaper"><img id="Paper" src="images/paper.jpg" alt="PAPER" width="100px" height="100px"><figcaption>PAPER</figcaption></figure>
