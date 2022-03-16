@@ -8,6 +8,7 @@ body {
     background-color: wheat;
     font-family: Helvetica, sans-serif, sans-serif;
     font-size: 18px; 
+    color:black;
 }
 footer,header {
     height: 100px;
@@ -60,7 +61,7 @@ figcaption{
 }
 h1,h2,h3,p {
     text-align: center;
-    flex:0 0 none;
+    flex:0 0 auto;
     width: 100%;
 }
 .scoreBoard{
@@ -72,6 +73,7 @@ h1,h2,h3,p {
     row-gap: 10px;
     margin: 0;
     padding: 0;
+    transition: all 0.5s;
 }
 #userScore,#userScore{
     width: 180px;    
@@ -82,8 +84,33 @@ h1,h2,h3,p {
 section{
     display: flex;
     width: 100%;
-    flex:0 0 none;
+    flex:0 0 auto;
     border: 1px dashed black;
     margin: 0 auto;
     justify-content: center;
+}
+figure img{
+    width: 100px;
+    height: 100px;
+}
+.titleAdd{
+    font-size:1.5em;
+}
+.restart{
+    color: blue;
+    font-size: 2.5em;
+    transition: font-size 0.5s,color 0.5s;
+}
+.restart:hover{
+    cursor: pointer;
+    color: whitesmoke;
+    font-size: 3em;
+}
+.uSel{
+    color: black;
+    transition: 0.5s;
+}
+.uSel:hover{
+    cursor: pointer;
+    color: blue;
 }

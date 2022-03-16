@@ -1,5 +1,4 @@
 function playRound(playerSelection, computerSelection) {
-    // your code here!
     if (playerSelection===computerSelection)
     { draw++;
         return 'It is a draw! '+ playerSelection.toUpperCase()+ ' equals ' + computerSelection.toUpperCase();
@@ -25,42 +24,62 @@ function playRound(playerSelection, computerSelection) {
     else if(x===2) {return 'paper';}
     else {return 'scissors';}
 }
-function game(playerSelection='rock')
-{   
-    if(win===5||lost===5)
-    {
-       if(win>lost) msg2='Final Result : Congratulation! You Won.';
-       else msg2='Final Result : Hard Luck! You Lost.';
-       document.getElementById("resultText").textContent= msg2;
-       document.getElementById("scoreTitle").textContent= "GAME-OVER! FINAL-SCORE";
-    //    document.getElementById("usrWeapons").disp
-    let child = document.getElementById("usrWeapons");
-    child.style.display='none';
-    child = document.getElementById("comWeapons");
-    child.style.display='none';
-    // child.parentNode.removeChild(child);
-    } 
-    else {
-    let computerSelection = computerPlay();
+function game(playerSelection,computerSelection)
+ {   //let computerSelection = computerPlay();
     gRound++;
     document.getElementById("resultText").textContent='round ' +gRound+" - "+playRound(playerSelection.toLowerCase(),computerSelection.toLowerCase());
     document.getElementById("uScore").textContent=win;
     document.getElementById("cScore").textContent=lost;
-    }      
+    if(win===5||lost===5){
+        document.getElementById("usrWeapons").style.display='none';
+        document.getElementById("comWeapons").style.display='none';
+        setTimeout(gameOver, 1000);
+    }
+    // {
+    //    if(win>lost) msg2='Final Result : Congratulation! You Won.';
+    //    else msg2='Final Result : Hard Luck! You Lost.';
+    //    document.getElementById("resultText").textContent= msg2;
+    //    document.getElementById("scoreTitle").textContent= "GAME-OVER! FINAL-SCORE";
+    //     let child = document.getElementById("usrWeapons");
+    // child.style.display='none';
+    // child = document.getElementById("comWeapons");
+    // child.style.display='none';
+    // child=document.getElementsByClassName("titleAdd");
+    // child[0].textContent='Game Over! Click Here To Play Again';
+    // child[0].classList.add('restart');
+    // child[0].addEventListener('click',restart);
+    // }   
 }
-//   let playerSelection = "rock";
+function gameOver(){
+    if(win>lost) msg2='Final Result : Congratulation! You Won.';
+       else msg2='Final Result : Hard Luck! You Lost.';
+       document.getElementById("resultText").textContent= msg2;
+       document.getElementById("scoreTitle").textContent= "GAME-OVER! FINAL-SCORE";
+       let child =document.getElementsByClassName("titleAdd");
+    child[0].textContent='Game Over! Click Here To Play Again';
+    child[0].classList.add('restart');   
+    child[0].addEventListener('click',restart);      
+}
+
+function restart(){
+    win=lost=draw=gRound=0;
+    msg1=msg2='';
+    let s=document.getElementById("titleAdd");
+    s.textContent='The first to score 5, wins!';
+    s.classList.remove('restart');
+    s.removeEventListener('click',function(){s= s;});
+    document.getElementById("resultText").textContent= "";
+    document.getElementById("scoreTitle").textContent= "SCORE-BOARD"; 
+    document.getElementById("uScore").textContent=document.getElementById("cScore").textContent=0;
+    document.getElementById("usrWeapons").style.display='flex';
+    document.getElementById("comWeapons").style.display='flex';     
+}
 
   let win=lost=draw=gRound=0;    
   let msg1=msg2='';
-  const section = document.getElementById('Rock');
+  // EvenListener
+document.getElementById('Rock').addEventListener('click', function(){game('rock',computerPlay());});
+document.getElementById('Paper').addEventListener('click', function(){game('paper',computerPlay());});
+document.getElementById('Scissors').addEventListener('click', function(){game('scissors',computerPlay());});
 
-// Print the selected target
-document.getElementById('Rock').addEventListener('click', function(){game('rock');});
-document.getElementById('Paper').addEventListener('click', function(){game('paper');});
-document.getElementById('Scissors').addEventListener('click', function(){game('scissors');});
-//   console.log(game());//   choice.addEventListener("click",alert($(this).text()));
-//   document.getElementById("resultText").textContent = p;
-//   p=document.getElementById("uScore").textContent
- 
-//   alert(msg1+'\n'+msg2);
   
