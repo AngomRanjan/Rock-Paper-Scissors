@@ -1,4 +1,7 @@
-function playRound(playerSelection, computerSelection) {
+
+
+function playRound(playerSelection, computerSelection) 
+{
     if (playerSelection===computerSelection)
     { draw++;
         return 'It is a draw! '+ playerSelection.toUpperCase()+ ' equals ' + computerSelection.toUpperCase();
@@ -15,6 +18,7 @@ function playRound(playerSelection, computerSelection) {
         return 'Invalid input!';        
     }
   }
+  
   function computerPlay()
 {
     const max=3;
@@ -24,31 +28,43 @@ function playRound(playerSelection, computerSelection) {
     else if(x===2) {return 'paper';}
     else {return 'scissors';}
 }
+function freezeSelect(elementID)
+{
+    // statement to temp change to new style
+    elementID=document.getElementById(elementID);
+    elementID.style.border="6px solid orangered";
+    elementID.style.color="blue";
+    elementID.style.width="150px";
+    elementID.style.height="150px";
+}
+///test
+ function unfreezeSelect(elementID){
+     // statement to Retain original Style
+     elementID=document.getElementById(elementID);
+     elementID.style.border="2px solid yellowgreen";
+     elementID.style.color="black";
+     elementID.style.width="100px";
+     elementID.style.height="125px";
+ }
+//test ends
 function game(playerSelection,computerSelection)
- {   //let computerSelection = computerPlay();
-    gRound++;
-    document.getElementById("resultText").textContent='round ' +gRound+" - "+playRound(playerSelection.toLowerCase(),computerSelection.toLowerCase());
+ {  //highlighting selected weapon 
+    
+    freezeSelect(computerSelection+2);
+    //
+    gRound++;  
+    
+    document.getElementById("resultText").textContent='round ' +gRound+" - "+playRound(playerSelection,computerSelection);
     document.getElementById("uScore").textContent=win;
     document.getElementById("cScore").textContent=lost;
+
+    setTimeout(function(){unfreezeSelect(computerSelection+2);},500);
     if(win===5||lost===5){
         document.getElementById("usrWeapons").style.display='none';
         document.getElementById("comWeapons").style.display='none';
         setTimeout(gameOver, 1000);
     }
-    // {
-    //    if(win>lost) msg2='Final Result : Congratulation! You Won.';
-    //    else msg2='Final Result : Hard Luck! You Lost.';
-    //    document.getElementById("resultText").textContent= msg2;
-    //    document.getElementById("scoreTitle").textContent= "GAME-OVER! FINAL-SCORE";
-    //     let child = document.getElementById("usrWeapons");
-    // child.style.display='none';
-    // child = document.getElementById("comWeapons");
-    // child.style.display='none';
-    // child=document.getElementsByClassName("titleAdd");
-    // child[0].textContent='Game Over! Click Here To Play Again';
-    // child[0].classList.add('restart');
-    // child[0].addEventListener('click',restart);
-    // }   
+   
 }
 function gameOver(){
     if(win>lost) msg2='Final Result : Congratulation! You Won.';
@@ -75,11 +91,10 @@ function restart(){
     document.getElementById("comWeapons").style.display='flex';     
 }
 
-  let win=lost=draw=gRound=0;    
-  let msg1=msg2='';
-  // EvenListener
-document.getElementById('Rock').addEventListener('click', function(){game('rock',computerPlay());});
-document.getElementById('Paper').addEventListener('click', function(){game('paper',computerPlay());});
-document.getElementById('Scissors').addEventListener('click', function(){game('scissors',computerPlay());});
-
-  
+let win=lost=draw=gRound=0;    
+let msg1=msg2='';
+var computerWeapon;
+ // EvenListener
+document.getElementById('rock').addEventListener('click', function(){game('rock',computerPlay());});
+document.getElementById('paper').addEventListener('click', function(){game('paper',computerPlay());});
+document.getElementById('scissors').addEventListener('click', function(){game('scissors',computerPlay());});

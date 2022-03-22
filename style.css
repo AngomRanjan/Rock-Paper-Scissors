@@ -1,19 +1,22 @@
+@import url('http://fonts.cdnfonts.com/css/wonder-night');
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    color: yellow;
+    background-color: black;
 }
 body {
-    background-color: wheat;
-    font-family: Helvetica, sans-serif, sans-serif;
+    font-family: 'Wonder Night', sans-serif;
     font-size: 18px; 
-    color:black;
+    letter-spacing: 0.2em;   
+    
 }
-footer,header {
+header {
     height: 100px;
-    border: 1px solid blue;
-    background-color: #cf2020;    
+    margin-top:2em;
+    color: yellow;
 }
 footer{
     position:fixed;
@@ -26,20 +29,17 @@ main{
     display: flex;
     flex-wrap: wrap;
     max-width: 960px;
-    min-height: 500px;
+    gap:0 20px;
     margin: 0 auto;
-    padding: 50px;
-    justify-content: space-between;
+    padding: 10px;
+    justify-content:space-between;
     align-items: center;
-    border: 1px solid green;
-    background-color: azure;
-    row-gap: 20px;
+    row-gap: 10px;
 }
 div{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    border: 1px solid yellow;
     /* margin: 0 auto; */
     /* background-color: azure;
     width: 400px; */
@@ -50,11 +50,13 @@ div{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    border: 1px solid red;
     margin: 0 auto;
-    background-color: azure;
-    width: 400px;    
-    gap:0 20px;
+    max-width: 450px;
+    min-height: 200px;  
+    padding:10px;
+    flex: 1 1 auto;
+    gap:0px 15px;
+    /* height:fit-content; */
 }  
 figcaption{
     text-align: center;
@@ -67,50 +69,87 @@ h1,h2,h3,p {
 .scoreBoard{
     display: flex;
     flex-wrap: wrap;
+    border:1px solid rgb(59, 57, 57);
     justify-content: center;
-    max-width: 400px;
-    border: 1px solid violet;
+    max-width: 800px;
     row-gap: 10px;
     margin: 0;
-    padding: 0;
+    padding: 10px;
     transition: all 0.5s;
 }
-#userScore,#userScore{
-    width: 180px;    
+#userScore{
+    width: 180px;  
+    align-self: center;  
 }
 #resultText,#scoreTitle{
     margin: 0em;
+    font-weight: bold;
 }
 section{
     display: flex;
     width: 100%;
     flex:0 0 auto;
-    border: 1px dashed black;
     margin: 0 auto;
     justify-content: center;
 }
 figure img{
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 80%;
+}
+.title{
+    font-family: 'Wonder Night', sans-serif;
+    font-size: 3em;
+    font-weight: bold;
+    letter-spacing: 0.2em;    
+    color: yellow;
 }
 .titleAdd{
     font-size:1.5em;
+    color: rgb(236, 236, 112);
 }
 .restart{
-    color: blue;
-    font-size: 2.5em;
+    color: rgb(201, 159, 36);
+    font-size: 2em;
     transition: font-size 0.5s,color 0.5s;
 }
 .restart:hover{
     cursor: pointer;
-    color: whitesmoke;
-    font-size: 3em;
+    color: rgb(250, 105, 8);
+    font-size: 2.2em;
 }
-.uSel{
-    color: black;
-    transition: 0.5s;
+.uSel,.cSel{
+    color: black;    
+    width: 100px;
+    height: 125px;
+    border: 2px solid yellowgreen;
+    border-radius: 5px;
+    transition: all 0.5s;
 }
+
+
 .uSel:hover{
     cursor: pointer;
     color: blue;
+    width: 150px;
+    height: 150px;
+    border: 6px solid orangered;
+}
+.wTitle{
+    text-align: left;
+    width: 100%;
+    flex-shrink: 1;
+    margin-left: 40px;
+    
+}
+.scoreF{
+    font-size:2.5em;
+}
+.score{
+    font-size:1,5em;
+    display: flex;
+    flex-direction: column;
+    min-width: 180px;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
 }
