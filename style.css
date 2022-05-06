@@ -1,4 +1,5 @@
 @import url('http://fonts.cdnfonts.com/css/wonder-night');
+@import url('https://fonts.googleapis.com/css2?family=Jim+Nightshade&display=swap');
 
 * {
     box-sizing: border-box;
@@ -8,7 +9,7 @@
     background-color: black;
 }
 body {
-    font-family: 'Wonder Night', sans-serif;
+    font-family: 'Wonder Night','Jim Nightshade', cursive;
     font-size: 18px; 
     letter-spacing: 0.2em;   
     
