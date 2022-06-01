@@ -34,7 +34,7 @@ Feel free to check the [issues page](https://github.com/AngomRanjan/etch-a-sketc
 
 ## Show your support
 
-Give a ⭐️ if you like this project!
+Give a [⭐️](../../stargazers) if you like this project!
 
 ## Acknowledgments
 
